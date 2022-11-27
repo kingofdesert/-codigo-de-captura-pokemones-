@@ -27,7 +27,7 @@ while catch<255:
     est = int(input('estado'))
     if est<=2:
         vaest=2
-    elif est<=5:
+    elif est>2 and est<=5:
         vaest=(3/2)
     else:
         vaest=1
@@ -45,9 +45,8 @@ while catch<255:
         catch = 300
        else:
         print('pokemon escapo despues de',j,'rebotes')
+        print('')
 print('pokemon capturado')
-
-
 
 
 
