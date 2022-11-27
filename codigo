@@ -2,12 +2,13 @@ import random
 print ('bienvenido a la calculadora de captura pokemon')
 catch=0
 while catch<255:
+    print('¿que pokebola usaras?')
     poke = ['pokeball', 'greatball', 'ultraball', 'masterball']
     cont = 1
     for poken in (poke):
       print('-', cont, poken)
       cont += 1
-    pok = int(input('¿que pokeball usaras?'))
+    pok = int(input('pokebola'))
     if pok==1:
         pokell=1
     elif pok==2:
@@ -15,14 +16,15 @@ while catch<255:
     elif pok == 3:
         pokell = 2
     elif pok==4:
-        pokell=2550
+        break
     rat = int(input('ratio de captura pokemon'))
+    print('¿estado del pokemon?')
     estatus = ['congelado', 'dormido', 'paralizado', 'quemado','envenenado','ninguno']
     cont = 1
     for estt in (estatus):
         print('-', cont, estt)
         cont += 1
-    est = int(input('¿estado del pokemon?'))
+    est = int(input('estado'))
     if est<=2:
         vaest=2
     elif est<=5:
@@ -34,14 +36,17 @@ while catch<255:
     catch=vaest*(((3*ps1 - 2*ps2)*rat*pokell)/(3*ps1))
     if catch<255:
        b=(1048560)/((16711680)/catch)**(1/4)
-       c=random.randint(0,65535)
+       j=0
        for i in range (4) :
+        c = random.randint(0, 65535)
         if c<=b :
-          i=5
-          catch=300
-
-       print('pokemon escapo intente nuevamente')
+            j+=1
+       if j==4 :
+        catch = 300
+       else:
+        print('pokemon escapo despues de',j,'rebotes')
 print('pokemon capturado')
+
 
 
 
